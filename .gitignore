@@ -1,0 +1,26 @@
+# Credentials and sensitive information
+admin
+
+# Drafts / documentation folder
+ideas/
+
+# Environment configurations (including venue_scheduler/.env, backend, and frontend)
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Python caches and artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.cache/
+**/logs/
+
+# Frontend dependencies
+node_modules/
+
+# Agent configuration directories
+.claude/

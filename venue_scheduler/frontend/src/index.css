@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F3F3F3;
+  color: #1a1a1a;
+  overflow: hidden;
+}
+
+/* Fluent Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: #c2c2c2; border-radius: 10px; }
+
+/* Fluent Card Material */
+.fluent-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.fluent-sidebar {
+  background: rgba(249, 249, 249, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* 3D Canvas container */
+.three-canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Glass glow effect for VIP/Admin badges */
+.glow-blue {
+  box-shadow: 0 0 12px rgba(0, 120, 212, 0.35);
+}
+
+.glow-gold {
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
+}
+
+.glow-red {
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+}
+
+/* Card 3D perspective tilt (applied via framer-motion) */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Slide-in animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-slide-up { animation: slideUp 0.4s ease-out forwards; }
+.animate-fade-in  { animation: fadeIn 0.3s ease-out forwards; }
+
+/* Login page split layout */
+.login-hero {
+  background: linear-gradient(135deg, #0a0f1e 0%, #0d1b3e 50%, #091428 100%);
+}
+
+/* Pulse ring for real-time indicator */
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulseRing 1.5s ease-out infinite;
+}
